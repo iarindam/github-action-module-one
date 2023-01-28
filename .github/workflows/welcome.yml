@@ -6,9 +6,22 @@ on:
   pull_request:
     types: [opened]
 #Ending of Workflow definition section
+
 #Starting of Job definition section
 jobs:
   #Job is a "build" job, name is "Post welcome comment" and runs on server "ubuntu-latest"
   build:
     name: Post welcome comment
     runs-on: ubuntu-latest
+#Ending of Job definition section
+
+#Starting of Step definition section
+    steps:
+#Starting of Action definition section
+      - run: gh pr comment $PR_URL --body "Welcome to the repository!"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+#Ending of Action definition section
+
+#Ending of Step definition section
