@@ -1,6 +1,14 @@
+#Starting of Workflow definition section
 #name - Workflow Name
 name: Post welcome comment
 #on: pull_request: types: [opened] - workflow will be triggered with pull request opened event  
 on:
   pull_request:
     types: [opened]
+#Ending of Workflow definition section
+#Starting of Job definition section
+jobs:
+  #Job is a "build" job, name is "Post welcome comment" and runs on server "ubuntu-latest"
+  build:
+    name: Post welcome comment
+    runs-on: ubuntu-latest
