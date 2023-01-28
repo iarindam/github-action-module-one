@@ -1,4 +1,6 @@
+#name - Workflow Name
 name: Post welcome comment
+#on: pull_request: types: [opened] - workflow will be triggered with pull request opened event  
 on:
   pull_request:
     types: [opened]
